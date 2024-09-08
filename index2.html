@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLUB 1899</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f6f6;
+            overflow-x: hidden;
+        }
+
+        header{
+            
+    background-color: #000000;
+    height: 70px;
+    box-shadow: 0 4px 8px rgba(33, 33, 33, 0.3);
+    font-weight: bold;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 1px 2px rgba(30, 30, 30, 0.3);
+    border-bottom: 2px solid rgba(77, 76, 76, 0.737);
+    
+
+        }
+
+        .logox {
+    float: left;
+    margin-top: 6px;
+}
+
+.logox img {
+    margin-left: 12px;
+    margin-top: 3px;
+    height: 60px;
+    
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+   
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    margin-top: 25px;
+}
+
+.cart {
+    float: right;
+}
+
+.cart img {
+    height: 25px;
+    margin-top: 23px;
+}
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .img4 {
+            position: absolute;
+            top: 0;
+            left: 7%;
+            height: 550px;
+            text-align: center;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        @media (min-width: 1024px) {  
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                
+                z-index: 1; /* Overlay hinter den Button stellen */
+            }
+
+            .logo {
+                text-align: center; 
+                top: 50px;
+                z-index: 2;
+            }
+
+            .logo1 {
+                height: 170px;
+                margin-top: 40px;
+                text-align: top;
+            }
+        }
+
+        .hero button {
+            position: relative;
+            padding: 8px 16px;
+            font-size: 1.45em;
+            margin-top: -30px;
+            color: #fff;
+            background-color: black;
+            border: none;
+            border-radius: 1px;
+            box-shadow: 0 4px 8px rgba(33, 33, 33, 0.3);
+            text-shadow: 0 4px 8px rgba(247, 245, 245, 0.3);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bolder;
+            font-weight: 800;
+            z-index: 2; /* Button über dem Overlay */
+        }
+
+        .hero button:hover {
+            background-color: #555555af;
+        }
+
+        #shop-section {
+            padding: 20px 16px;
+            text-align: center;
+            background-color: #ffffff;
+            /* Optional: Add some metallic-like reflection */
+            background-blend-mode: multiply;
+        }
+
+        #shop-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .product {
+            text-align: center;
+            margin-bottom: 100px;
+            display: inline-block;
+            width: 90%;
+            height: 60%;
+            padding: 20px;
+            border: none;
+            
+            background-color: #ffffff;
+           
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 4px 4px 10px rgba(44, 43, 43, 0.19);
+        }
+
+        .product img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            filter: contrast(105%);
+            border-radius: 12px;
+        }
+
+        .product h3 {
+            font-size: 1.5em;
+            margin: 10px 0;
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+
+        .price {
+            color: rgb(0, 0, 0);
+        }
+
+        .buy-btn {
+            border: 1px solid black;
+            border-radius: 6px;
+            background-color: #000;
+            color: #fff;
+            font-weight: bolder;
+            text-shadow: 6px rgba(234, 232, 232, 0.26);
+            padding: 5px 10px;
+            font-family: sans-serif;
+            font-size: larger;
+            box-shadow: 0 2px 6px rgba(36, 36, 36, 0.26);
+            text-shadow: 10px rgba(244, 244, 244, 0.3);
+        }
+
+        .product p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #000;
+        }
+
+        footer {
+            background-color: #000;
+            color: rgb(242, 240, 240);
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            z-index: 2;
+            width: 100%;
+        }
+
+        footer::before {
+            z-index: 1;
+        }
+
+        .header2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding: 0 20px;
+        }
+
+        .h5 {
+            font-weight: bolder;
+            color: #09200e;
+            font-size: 28px;
+        }
+
+        .icon {
+            font-size: 27px;
+            cursor: pointer;
+            
+        }
+
+       
+
+        @media (max-width: 735px) {
+            .product {
+                margin-bottom: 100px;
+                text-align: center;
+                padding: 0 16px 16px;
+                font-size: smaller;
+            }
+
+            .product img {
+                width: 100%;
+                max-width: 250px;
+                height: auto;
+                filter: contrast(105%);
+                border-radius: 12px;
+            }
+
+            .hero {
+                display: flex;
+                flex-direction: column;
+                top: 30%;
+            }
+
+            .hero button {
+                size: 1em;
+                padding: 4px 8px;
+                border-radius: 9px;
+                top: -40px;
+                margin-top: 15px;
+            }
+
+            .buy-btn {
+                box-shadow: 0 4px 6px rgba(36, 36, 36, 0.16);
+                text-shadow: 10px rgba(244, 244, 244, 0.3);
+            }
+
+            
+
+            .logo1 {
+                height: 140px;
+                margin-top: 10px;
+                text-align: top;
+            }
+
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5); /* Verdunkelt das Hintergrundbild */
+                z-index: 1; /* Overlay hinter den Button stellen */
+            }
+
+            .footer {
+                height: 40px;
+            }
+
+            .h5 {
+                font-size: 17px;
+            }
+
+            .icon {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logox">
+                <a href="#">
+                    <img src="logo.png" alt="Matador Energy Logo">
+                </a>
+            </div>
+           
+            <div class="cart">
+                <a href="#"><img src="cart.png" alt="Cart Icon"></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="logo">
+            
+        </div>
+        <img src="Design ohne Titel (3).png" class="img4" alt="Porsche Background">
+        <button onclick="document.getElementById('shop-section').scrollIntoView({ behavior: 'smooth' });">Shop</button>
+    </div>
+    
+    <section id="shop-section">
+        <div class="header2">
+            <span class="icon">&#9776;</span> <!-- Menü Icon -->
+            <h5>ALYPTAX SUPPLEMENT</h5>
+            <span class="icon">&#128722;</span> <!-- Warenkorb Icon -->
+        </div>
+        <a href="https://www.depop.com/club1899" target="_blank">
+            <div class="product">
+                <img src="cold, smooth & tasty._20240907_092512_0000.png" alt="Driven By Dreams">
+                <h3>Alyptax Schnupf Supplement</h3>
+                <p>★★★★★</p>
+                <p class="price">$3.99 USD</p>
+                <button class="buy-btn" href="https:/" target="_blank">Jetzt kaufen</button>
+            </div>
+        </a>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Alyptax - Supplement</p>
+    </footer>
+</body>
+</html>
