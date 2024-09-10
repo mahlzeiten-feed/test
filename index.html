@@ -1,244 +1,137 @@
-
-
-
-
-
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="robots" content="noindex" />
-        
-            <link rel="preconnect" href="https://app.framerstatic.com/" />
-            <link rel="dns-prefetch" href="https://app.framerstatic.com/" />
-        
-
-        <script type="importmap-shim">
-{
-    "imports": {
-        "framer": "./scripts/framer.esm.js",
-        "framer-motion": "https://app.framerstatic.com/framer-motion-esm-shim.MGZYRXXX.js",
-        "react": "./scripts/react.esm.js",
-        "react/jsx-runtime": "./scripts/react-jsx-runtime.esm.js",
-        "react/jsx-dev-runtime": "./scripts/react-jsx-runtime.esm.js",
-        "react-dom": "./scripts/react-dom.esm.js",
-        "react-dom/client": "./scripts/react-dom.esm.js",
-        "react-dom/server": "./scripts/react-dom-server.esm.js"
-    }
-}
-</script>
-
-        
-        
-        
-        
-        
-        
-        
-        
-            <script src="scripts/react/react.production.min.js"></script>
-<script src="scripts/react-dom/react-dom.production.min.js"></script>
-<script src="scripts/react-dom/react-dom-server-legacy.browser.production.min.js"></script>
-        
-        
-        
-        
-
-        
-<script>
-    window.__previousRequire__ = window.require
-    window.__previousExports__ = window.exports
-    window.__previousProcess__ = window.process
-
-    window.require = (moduleSpecifier) => {
-        switch (moduleSpecifier) {
-            case "react":
-                return window.React
-            case "object-assign":
-                return Object.assign
-            default:
-                throw new Error("react-jsx-runtime requires unexpected module:" + moduleSpecifier)
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alyptax Supplement</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
         }
-    }
 
-    window.__REACT_RUNTIME_JSX__ = { Fragment: undefined, jsx: undefined, jsxs: undefined, jsxDEV: undefined }
-    window.exports = {
-        set Fragment(value) { window.__REACT_RUNTIME_JSX__.Fragment = value; },
-        set jsx(value) { window.__REACT_RUNTIME_JSX__.jsx = value; },
-        set jsxs(value) { window.__REACT_RUNTIME_JSX__.jsxs = value; },
-        set jsxDEV(value) {window.__REACT_RUNTIME_JSX__.jsxDEV = value; }
-    }
-</script>
+        header {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 0 20px;
+            width: 100%;
+        }
 
-    <script>
-        window.process = { env: { NODE_ENV: "production" } }
-    </script>
-    <script src="./scripts/react/react-jsx-runtime.production.min.js"></script>
+        .logox {
+            height: 65px;
+            margin: 0 20px;
+        }
 
-<script>
-    // Restore the globals to their prev values.
-    window.require = window.__previousRequire__
-    window.exports = window.__previousExports__
-    window.process = window.__previousProcess__
-</script>
+        h5 {
+            font-size: larger;
+            text-align: left;
+            margin: 16px;
+            flex-grow: 1;
+        }
 
-        
-        
-        
-        
-        
-            <link href="https://app.framerstatic.com/preview-module.CSDQOADJ.css" rel="stylesheet" />
-            
-            <style>
-                html, body {
-                    width: 100%;
-                    height: 100%;
-                }
+        .cart-img {
+            height: 55px;
+            margin: 0 20px;
+        }
 
-                body > main {
-                    display: contents;
-                }
-            </style>
-        
-        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-        <!-- Workaround for a WebKit bug: loading via URL from the stylesheet is denied if this file is loaded via file:/// -->
-        <style>
-            :root {
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
+        .product {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
 
-            * {
-                -webkit-font-smoothing: inherit;
-            }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
 
-            @font-face {
-                font-family: "Input Mono";
-                font-style: normal;
-                font-weight: 400;
-                src: local("Input Mono"), url("fonts/QbHJVUjy6YgY.app.ttf") format("truetype");
-            }
+        .product h2 {
+            margin-top: 10px;
+        }
 
-            .framerInternalUI-componentPlaceholder,
-            .framerInternalUI-errorPlaceholder {
-                border: calc(1px * var(--framerInternalCanvas-canvasPlaceholderContentScaleFactor, 1)) dashed currentColor;
-                border-radius: calc(6px * var(--framerInternalCanvas-canvasPlaceholderContentScaleFactor, 1));
-                font-size: calc(12px * var(--framerInternalCanvas-canvasPlaceholderContentScaleFactor, 1));
-            }
+        .product p {
+            margin-top: 5px;
+        }
 
-            /* Placeholder for loading components. */
-            .framerInternalUI-componentPlaceholder {
-                border-style: solid;
-                border-color: rgba(149, 149, 149, 0.15);
-                background-color: rgba(149, 149, 149, 0.1);
-                color: #a5a5a5;
-            }
+        .button {
+            background-color: #000000;
+            color: white;
+            font-weight: bold;
+            padding: 8px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-            /* Placeholder for components with errors. */
-            .framerInternalUI-errorPlaceholder {
-                border-style: solid;
-                border-color: rgba(149, 149, 149, 0.15);
-                background-color: rgba(149, 149, 149, 0.1);
-                color: #a5a5a5;
-            }
+        .button:hover {
+            background-color: #f3d700;
+            color: black;
+        }
 
-            .framerInternalUI-componentPlaceholder .text,
-            .framerInternalUI-errorPlaceholder .text {
-                transition: opacity 300ms;
-            }
+        footer {
+            background-color: #ffdd00;
+            text-align: center;
+            padding: 10px 0;
+        }
 
-            .framerInternalUI-componentPlaceholder .pending,
-            .framerInternalUI-errorPlaceholder .pending {
-                opacity: 0;
-            }
-        </style>
+        .timer {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 20px;
+        }
 
-        
-        
-        
-        
-        
-            <link href="https://app.framerstatic.com/chunk-FGKRGVSL.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-M7IU6JKZ.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-Q3YKN24K.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-HSJ3NV65.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-F4NXOBHC.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-YDHAP7HF.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-2J7CZL4X.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-S3XK3B27.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-BG526CLQ.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-G6RVR2BI.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-OJKFQ3PE.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-N7CDOI6S.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-S2X2R6G5.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-M5JBPS3M.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-TWKDNXKF.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-TWVCWZGU.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-PXT46LAW.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-2RTTGJOA.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-ZI66BWQ5.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-ZSSRVCVS.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-VCOL7YW2.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-E3AVVECY.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-GK6AYZCV.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-UOQSCAZS.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-F7VF35E5.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-SXZ66LDK.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-IZLO6YCL.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-YU7LJFO6.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-C5CQIHOE.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-GSGXB2GS.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-FPTZNUWD.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-A75JD7ND.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-Z2CFABVR.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-HOFJ374Z.js" rel="modulepreload" />
-<link href="https://app.framerstatic.com/chunk-NPB7FJIP.js" rel="modulepreload" />
-        
-        
-    </head>
+        .timer span {
+            padding: 0 10px;
+        }
 
-    <body>
-        <main></main>
-        <script>
-    // Init options for es-module-shims: https://github.com/guybedford/es-module-shims#init-options
-    window.esmsInitOptions = {
-        shimMode: true,
-        mapOverrides: true,
-        revokeBlobURLs: true,
-        resolve: function (id, parentUrl, defaultResolve) {
-            // Can be set via installShimResolveHook() in importShim.ts.
-            const resolve = window["esmsResolveHook"]
-            if (resolve) return resolve(id, parentUrl, defaultResolve)
-            return defaultResolve(id, parentUrl)
-        },
-    }
+        .timer .label {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+   <header>
+        <h5>ALYPTAX</h5>
+        <img class="logox" src="Photoroom-20240907_165843.png" alt="Matador Energy Logo">
+        <img class="cart-img" src="cart-removebg-preview.png">
+   </header>
 
-    // A lot of libraries assume `process.env.NODE_ENV` is present in runtime/buildtime, so we are polyfilling it
-    window.process = {
-        ...window.process,
-        env: {
-            ...window.process?.env,
-            NODE_ENV: "production",
-        },
-    }
-</script>
-
-        
-        
-        
-        
-        
-        
-        
-            <script src="https://app.framerstatic.com/preview-module.M223CRY6.js" type="module"></script>
-        
-        
-        
-        
-    </body>
+    <div class="container">
+        <div class="product">
+            <img src="cold, smooth & tasty._20240907_092512_0000.png" alt="Blue Raspberry Energy Drink">
+            <h2>Alyptax (Hydrochloride) - 1 Pack</h2>
+            <p>$3.99</p>
+            <button class="button">Mehr Erfahren</button>
+        </div>
+        <div class="product">
+            <img src="cold, smooth & tasty._20240907_092736_0000.png" alt="Strawberry Acai Energy Drink">
+            <h2>Alyptax Tinktur (Liquide) - 3 Pack</h2>
+            <p>$7.99</p>
+            <button class="button">Mehr Erfahren</button>
+        </div>
+    </div>
+    <footer>
+        <div class="timer">
+            <span class="label">Days:</span> <span>33</span>
+            <span class="label">Hrs:</span> <span>12</span>
+            <span class="label">Mins:</span> <span>45</span>
+            <span class="label">Secs:</span> <span>57</span>
+        </div>
+        <p>UPCOMING IN:</p>
+    </footer>
+</body>
 </html>
